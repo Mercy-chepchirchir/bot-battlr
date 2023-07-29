@@ -3,13 +3,17 @@ import { HiXMark } from "react-icons/hi2"
 function BotCard({ bot, handleBotClick }) {
     const { id, name, health, damage, armor, catchphrase, avatar_url } = bot;
 
+    const handleXClick = (botId) => {
+        console.log(botId)
+    }
+
     return (
         <div key={id} className="col bot-card">
             <div className="card h-100">
                 {/* X mark icon styling */}
                 <div style={{ display: "flex", justifyContent: "right" }}>
-                    <div className="xmark-box">
-                        <HiXMark color="red" size="2rem" stroke-width="1"  />
+                    <div className="xmark-box" onClick={() => { handleXClick(id) }}>
+                        <HiXMark color="red" size="2rem" strokeWidth="1"  />
                     </div>
                 </div>
 
