@@ -1,13 +1,20 @@
 import { HiXMark } from "react-icons/hi2"
 
-function BotCard({ bot, handleBotClick }) {
+function BotCard({ bot, bots, handleBotClick, setBots }) {
     const { id, name, health, damage, armor, catchphrase, avatar_url } = bot;
 
     const handleXClick = (botId) => {
+
         fetch(`http://localhost:3000/bots/${botId}`, {
             method: "DELETE"
         }).then(res => res.json())
-        .then(data => console.log(data))
+        .then(() => {
+            const filteredBots = bots.filter((oneBot) => {
+                return oneBot.id !== bot.id
+            })
+
+            setBots(filteredBots)
+        })
     }
 
     return (
@@ -16,7 +23,7 @@ function BotCard({ bot, handleBotClick }) {
                 {/* X mark icon styling */}
                 <div style={{ display: "flex", justifyContent: "right" }}>
                     <div className="xmark-box" onClick={() => { handleXClick(id) }}>
-                        <HiXMark color="red" size="2rem" strokeWidth="1"  />
+                        <HiXMark color="red" size="2rem"/>
                     </div>
                 </div>
 

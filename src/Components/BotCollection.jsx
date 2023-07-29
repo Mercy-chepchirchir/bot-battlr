@@ -1,15 +1,6 @@
 import {useEffect, useState} from "react";
-import BotCard from "./BotCard";
 
-function BotCollection({ botArmy, setBotArmy, displayBots }) {
-    const [bots, setBots] = useState([])
-    
-    useEffect(() => {
-        fetch('http://localhost:3000/bots').then((res) => res.json()).then((data) => {
-            setBots(data)
-        })
-    }, [])
-
+function BotCollection({ bots, botArmy, setBotArmy, displayBots }) {
     const handleBotClick = (botId) => {
     
         // *find* returns the entire item (bot) if the condition passes (bot id matches)
