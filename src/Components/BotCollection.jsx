@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
+import BotCard from "./BotCard";
 
-function BotCollection({ botArmy, setBotArmy }) {
+function BotCollection({ botArmy, setBotArmy, displayBots }) {
     const [bots, setBots] = useState([])
     
     useEffect(() => {
@@ -26,29 +27,12 @@ function BotCollection({ botArmy, setBotArmy }) {
            setBotArmy([...botArmy, clickedBot])
         }
     }
-
-    const displayBots = bots.map(({ id, name, health, damage, armor, catchphrase, avatar_url }) => {
-        return (
-            <div key={id} className="col bot-card" onClick={() => { handleBotClick(id) }}>
-                <div className="card h-100">
-                    <img src={avatar_url} className="card-img-top" alt="..."/>
-                    <div className="card-body">
-                        <h5 className="card-title">{name}</h5>
-                        <p className="card-text">{catchphrase}</p>
-                    </div>
-                    <div className="card-footer">
-                        <small className="text-muted">{health}, {damage}, {armor}</small>
-                    </div>
-                </div>
-            </div>
-        )
-    })
     
     return (
         <div>
             <h3>Bots Collection</h3>
             <div className="row row-cols-1 row-cols-md-4 g-3">            
-                {displayBots}
+                {displayBots(bots, handleBotClick)}
             </div>
         </div>
     )
