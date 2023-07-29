@@ -1,5 +1,6 @@
 import { HiXMark } from "react-icons/hi2"
-import YourBotArmy from "./YourBotArmy";
+import { FaHeartbeat } from "react-icons/fa"
+import { BsFillLightningFill, BsShieldShaded } from "react-icons/bs"
 
 function BotCard({ bot, originalBots, handleBotClick, setOriginalBots, setBotArmy, botArmy }) {
     const { id, name, health, damage, armor, catchphrase, avatar_url } = bot;
@@ -39,7 +40,8 @@ function BotCard({ bot, originalBots, handleBotClick, setOriginalBots, setBotArm
                         <p className="card-text">{catchphrase}</p>
                     </div>
                     <div className="card-footer">
-                        <small className="text-muted">{health}, {damage}, {armor}</small>
+                        
+                        <FaHeartbeat/> {health} <BsFillLightningFill/> {damage} <BsShieldShaded /> {armor}
                     </div>
                 </div>
             </div>
