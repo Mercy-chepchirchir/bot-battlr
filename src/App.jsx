@@ -5,19 +5,19 @@ import YourBotArmy from './Components/YourBotArmy'
 import BotCard from './Components/BotCard'
 
 function App() {
-  const [bots, setBots] = useState([])
+  const [originalBots, setOriginalBots] = useState([])
   const [botArmy, setBotArmy] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:3000/bots').then((res) => res.json()).then((data) => {
-        setBots(data)
+        setOriginalBots(data)
     })
 }, [])
 
   const displayBots = (bots, handleBotClick) => {
     const newBotsArray = bots.map((bot) => {
       return (
-          <BotCard key={bot.id} bot={bot} bots={bots} handleBotClick={handleBotClick} setBots={setBots}/>
+          <BotCard key={bot.id} bot={bot} originalBots={originalBots} handleBotClick={handleBotClick} setOriginalBots={setOriginalBots}/>
       )
     })
 
@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <YourBotArmy botArmy={botArmy} setBotArmy={setBotArmy} displayBots={displayBots}/>
-      <BotCollection bots={bots} botArmy={botArmy} setBotArmy={setBotArmy} displayBots={displayBots} />
+      <BotCollection originalBots={originalBots} botArmy={botArmy} setBotArmy={setBotArmy} displayBots={displayBots} />
     </>
   )
 }

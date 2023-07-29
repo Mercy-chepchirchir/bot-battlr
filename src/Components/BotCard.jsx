@@ -1,6 +1,6 @@
 import { HiXMark } from "react-icons/hi2"
 
-function BotCard({ bot, bots, handleBotClick, setBots }) {
+function BotCard({ bot, originalBots, handleBotClick, setOriginalBots }) {
     const { id, name, health, damage, armor, catchphrase, avatar_url } = bot;
 
     const handleXClick = (botId) => {
@@ -9,11 +9,11 @@ function BotCard({ bot, bots, handleBotClick, setBots }) {
             method: "DELETE"
         }).then(res => res.json())
         .then(() => {
-            const filteredBots = bots.filter((oneBot) => {
+            const filteredBots = originalBots.filter((oneBot) => {
                 return oneBot.id !== bot.id
             })
 
-            setBots(filteredBots)
+            setOriginalBots(filteredBots)
         })
     }
 

@@ -1,10 +1,10 @@
 import {useEffect, useState} from "react";
 
-function BotCollection({ bots, botArmy, setBotArmy, displayBots }) {
+function BotCollection({ originalBots, botArmy, setBotArmy, displayBots }) {
     const handleBotClick = (botId) => {
     
         // *find* returns the entire item (bot) if the condition passes (bot id matches)
-        const clickedBot = bots.find((bot) => {
+        const clickedBot = originalBots.find((bot) => {
             return bot.id === botId
         })
 
@@ -23,7 +23,7 @@ function BotCollection({ bots, botArmy, setBotArmy, displayBots }) {
         <div>
             <h3>Bots Collection</h3>
             <div className="row row-cols-1 row-cols-md-4 g-3">            
-                {displayBots(bots, handleBotClick)}
+                {displayBots(originalBots, handleBotClick)}
             </div>
         </div>
     )
