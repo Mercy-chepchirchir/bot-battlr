@@ -5,7 +5,6 @@ function BotCard({ bot, originalBots, handleBotClick, setOriginalBots, setBotArm
     const { id, name, health, damage, armor, catchphrase, avatar_url } = bot;
 
     const handleXClick = (botId) => {
-
         fetch(`http://localhost:3000/bots/${botId}`, {
             method: "DELETE"
         }).then(res => res.json())
