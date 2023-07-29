@@ -10,11 +10,23 @@ function BotCollection({ botArmy, setBotArmy }) {
     }, [])
 
     const handleBotClick = (botId) => {
+    
+        // *find* returns the entire item (bot) if the condition passes (bot id matches)
         const clickedBot = bots.find((bot) => {
             return bot.id === botId
         })
 
-        setBotArmy([...botArmy, clickedBot])
+        // *some* returns true if clicked bot is in army otherwise returns false
+        const clickedBotIsInArmy = botArmy.some((bot) => {
+            return bot.id === botId
+        })
+
+        console.log(clickedBotIsInArmy)
+
+        // use ! (not operator) to see if clickedBot is not in army (return opposite)
+        if (!clickedBotIsInArmy) {
+           setBotArmy([...botArmy, clickedBot])
+        } 
     }
 
     const displayBots = bots.map(({ id, name, health, damage, armor, catchphrase, avatar_url }) => {

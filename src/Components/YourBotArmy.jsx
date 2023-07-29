@@ -2,7 +2,7 @@ function YourBotArmy({ botArmy }) {
     
     const displayBotArmy = botArmy.map(({ id, name, health, damage, armor, catchphrase, avatar_url }) => {
         return (
-            <div key={id} className="col">
+            <div key={id} className="col bot-card">
                 <div className="card h-60">
                     <img src={avatar_url} className="card-img-top" alt="..."/>
                     <div className="card-body">
