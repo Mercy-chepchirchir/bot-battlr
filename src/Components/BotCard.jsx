@@ -6,7 +6,10 @@ function BotCard({ bot, handleBotClick }) {
     return (
         <div key={id} className="col bot-card" onClick={() => { handleBotClick(id) }}>
             <div className="card h-100">
-                <HiXMark color="red" size="2rem" stroke-width="1" />
+                {/* X mark icon styling */}
+                <div style={{ display: "flex", justifyContent: "right" }}>
+                    <HiXMark color="red" size="2rem" stroke-width="1"  />
+                </div>
                 <img src={avatar_url} className="card-img-top" alt="..."/>
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
