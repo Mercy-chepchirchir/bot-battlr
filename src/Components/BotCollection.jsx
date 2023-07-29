@@ -21,7 +21,7 @@ function BotCollection({ botArmy, setBotArmy }) {
 
     const displayBots = bots.map(({ id, name, health, damage, armor, catchphrase, avatar_url }) => {
         return (
-            <div className="col bot-card" onClick={() => { handleBotClick(id) }}>
+            <div key={id} className="col bot-card" onClick={() => { handleBotClick(id) }}>
                 <div className="card h-100">
                     <img src={avatar_url} className="card-img-top" alt="..."/>
                     <div className="card-body">
@@ -39,7 +39,7 @@ function BotCollection({ botArmy, setBotArmy }) {
     return (
         <div>
             <h3>Bots Collection</h3>
-            <div class="row row-cols-1 row-cols-md-4 g-3">            
+            <div className="row row-cols-1 row-cols-md-4 g-3">            
                 {displayBots}
             </div>
         </div>
