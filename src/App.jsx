@@ -17,14 +17,13 @@ function App() {
   const displayBots = (bots, handleBotClick) => {
     const newBotsArray = bots.map((bot) => {
       return (
-          <BotCard key={bot.id} bot={bot} originalBots={originalBots} handleBotClick={handleBotClick} setOriginalBots={setOriginalBots}/>
+          <BotCard key={bot.id} bot={bot} originalBots={originalBots} botArmy={botArmy} setBotArmy={setBotArmy} handleBotClick={handleBotClick} setOriginalBots={setOriginalBots}/>
       )
     })
 
     return newBotsArray
   }
 
-  console.log(botArmy)
   return (
     <>
       <YourBotArmy botArmy={botArmy} setBotArmy={setBotArmy} displayBots={displayBots}/>
