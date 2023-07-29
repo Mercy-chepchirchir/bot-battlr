@@ -4,10 +4,12 @@ import BotCollection from './Components/BotColllection'
 import YourBotArmy from './Components/YourBotArmy'
 
 function App() {
+  const [botArmy, setBotArmy] = useState([])
+
   return (
     <>
       <YourBotArmy />
-      <BotCollection />
+      <BotCollection botArmy={botArmy} setBotArmy={setBotArmy} />
     </>
   )
 }
