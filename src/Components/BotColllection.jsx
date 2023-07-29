@@ -27,8 +27,11 @@ function BotCollection() {
     })
     
     return (
-        <div class="row row-cols-1 row-cols-md-4 g-3">
-            {displayBots}
+        <div>
+            <h3>Bots Collection</h3>
+            <div class="row row-cols-1 row-cols-md-4 g-3">            
+                {displayBots}
+            </div>
         </div>
     )
 }
