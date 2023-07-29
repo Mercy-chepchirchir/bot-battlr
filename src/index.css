@@ -58,7 +58,7 @@ button:focus-visible {
 /* Your Bot Army */
 .bot-army {
   background-color: rgb(234, 150, 199);
-  min-height: 24em !important;
+  min-height: 25em !important;
 }
 
 .bot-card:hover {
