@@ -1,14 +1,6 @@
 import {useEffect, useState} from "react";
 
-function BotCollection({ botArmy, setBotArmy }) {
-    const [bots, setBots] = useState([])
-    
-    useEffect(() => {
-        fetch('http://localhost:3000/bots').then((res) => res.json()).then((data) => {
-            setBots(data)
-        })
-    }, [])
-
+function BotCollection({ bots, setBots, botArmy, setBotArmy }) {
     const handleBotClick = (botId) => {
         const clickedBot = bots.find((bot) => {
             return bot.id === botId
@@ -16,7 +8,7 @@ function BotCollection({ botArmy, setBotArmy }) {
 
         console.log(clickedBot)
 
-        // setBotArmy([...botArmy, {}])
+        setBotArmy([...botArmy, clickedBot])
     }
 
     const displayBots = bots.map(({ id, name, health, damage, armor, catchphrase, avatar_url }) => {
