@@ -1,8 +1,19 @@
-function YourBotArmy({ botArmy }) {
+function YourBotArmy({ botArmy, setBotArmy }) {
+
+    // removes bot from botArmy when bot in botArmy is clicked
+    const handleBotArmyClick = (botId) => {
+
+        // filter returns new array with bots not matching the clickedBot (using !==)
+        const updatedBotArmy = botArmy.filter((bot) => {
+            return bot.id !== botId
+        })
+
+        setBotArmy(updatedBotArmy);
+    }
     
     const displayBotArmy = botArmy.map(({ id, name, health, damage, armor, catchphrase, avatar_url }) => {
         return (
-            <div key={id} className="col bot-card">
+            <div key={id} onClick={() => { handleBotArmyClick(id) }} className="col bot-card">
                 <div className="card h-60">
                     <img src={avatar_url} className="card-img-top" alt="..."/>
                     <div className="card-body">

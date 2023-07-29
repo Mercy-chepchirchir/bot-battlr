@@ -24,7 +24,7 @@ function BotCollection({ botArmy, setBotArmy }) {
         // use ! (not operator) to see if clickedBot is not in army (return opposite)
         if (!clickedBotIsInArmy) {
            setBotArmy([...botArmy, clickedBot])
-        } 
+        }
     }
 
     const displayBots = bots.map(({ id, name, health, damage, armor, catchphrase, avatar_url }) => {
