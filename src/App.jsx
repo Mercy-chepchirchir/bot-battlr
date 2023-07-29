@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
 import './App.css'
 import BotCollection from './Components/BotCollection'
 import YourBotArmy from './Components/YourBotArmy'
 import BotCard from './Components/BotCard'
+import BotSpecs from './Components/BotSpecs'
+
 
 function App() {
   const [originalBots, setOriginalBots] = useState([])
@@ -25,10 +29,14 @@ function App() {
   }
 
   return (
-    <>
+    <BrowserRouter>
       <YourBotArmy botArmy={botArmy} setBotArmy={setBotArmy} displayBots={displayBots}/>
-      <BotCollection originalBots={originalBots} botArmy={botArmy} setBotArmy={setBotArmy} displayBots={displayBots} />
-    </>
+        
+      <Routes>
+        <Route path="/" element={<BotCollection originalBots={originalBots} botArmy={botArmy} setBotArmy={setBotArmy} displayBots={displayBots} />} />
+        <Route path="/id" element={<BotSpecs />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

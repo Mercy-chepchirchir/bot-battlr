@@ -25,7 +25,7 @@ function BotCard({ bot, originalBots, handleBotClick, setOriginalBots, setBotArm
 
     return (
         <div key={id} className="col bot-card">
-            <div className="card h-100">
+            <div className="card h-90">
                 {/* X mark icon styling */}
                 <div style={{ display: "flex", justifyContent: "right" }}>
                     <div className="xmark-box" onClick={() => { handleXClick(id) }}>
@@ -40,7 +40,6 @@ function BotCard({ bot, originalBots, handleBotClick, setOriginalBots, setBotArm
                         <p className="card-text">{catchphrase}</p>
                     </div>
                     <div className="card-footer">
-                        
                         <FaHeartbeat/> {health} <BsFillLightningFill/> {damage} <BsShieldShaded /> {armor}
                     </div>
                 </div>
