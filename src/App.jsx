@@ -5,7 +5,7 @@ import YourBotArmy from './Components/YourBotArmy'
 
 function App() {
   const [botArmy, setBotArmy] = useState([])
-  console.log(botArmy)
+  
   return (
     <>
       <YourBotArmy botArmy={botArmy} setBotArmy={setBotArmy} />

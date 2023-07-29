@@ -21,8 +21,6 @@ function BotCollection({ botArmy, setBotArmy }) {
             return bot.id === botId
         })
 
-        console.log(clickedBotIsInArmy)
-
         // use ! (not operator) to see if clickedBot is not in army (return opposite)
         if (!clickedBotIsInArmy) {
            setBotArmy([...botArmy, clickedBot])
