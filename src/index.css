@@ -60,6 +60,9 @@ button:focus-visible {
   background-color: rgb(234, 150, 199);
 }
 
+.bot-card:hover {
+  cursor: pointer;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
