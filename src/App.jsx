@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <YourBotArmy />
+      <YourBotArmy botArmy={botArmy} setBotArmy={setBotArmy} />
       <BotCollection botArmy={botArmy} setBotArmy={setBotArmy} />
     </>
   )
