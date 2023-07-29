@@ -1,16 +1,16 @@
 function YourBotArmy({ botArmy }) {
     
-    const displayBotArmy = botArmy.map(() => {
+    const displayBotArmy = botArmy.map(({ id, name, health, damage, armor, catchphrase, avatar_url }) => {
         return (
             <div className="col">
                 <div className="card h-60">
-                    <img src="https://robohash.org/nostrumrepellendustenetur.png?size=300x300&set=set1" className="card-img-top" alt="..."/>
+                    <img src={avatar_url} className="card-img-top" alt="..."/>
                     <div className="card-body">
-                        <h5 className="card-title"></h5>
-                        <p className="card-text">aasdf</p>
+                        <h5 className="card-title">{name}</h5>
+                        <p className="card-text">{catchphrase}</p>
                     </div>
                     <div className="card-footer">
-                        <small className="text-muted">65, 70, 47</small>
+                        <small className="text-muted">{health}, {damage}, {armor}</small>
                     </div>
                 </div>
             </div>
