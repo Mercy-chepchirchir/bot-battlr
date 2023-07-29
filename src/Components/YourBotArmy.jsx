@@ -1,4 +1,4 @@
-function YourBotArmy() {
+function YourBotArmy({ botArmy }) {
 
     return (
         <div className="p-10">
