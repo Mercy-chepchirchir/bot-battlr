@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import BotCollection from './Components/BotColllection'
+import BotCollection from './Components/BotCollection'
 import YourBotArmy from './Components/YourBotArmy'
 
 function App() {
