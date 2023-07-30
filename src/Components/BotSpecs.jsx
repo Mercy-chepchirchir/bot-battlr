@@ -1,4 +1,3 @@
-import { HiXMark } from "react-icons/hi2"
 import { FaHeartbeat } from "react-icons/fa"
 import { BsFillLightningFill, BsShieldShaded } from "react-icons/bs" 
 import { Link, useNavigate } from "react-router-dom"   
