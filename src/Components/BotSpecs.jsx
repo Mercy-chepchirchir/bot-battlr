@@ -1,10 +1,11 @@
 import { HiXMark } from "react-icons/hi2"
 import { FaHeartbeat } from "react-icons/fa"
 import { BsFillLightningFill, BsShieldShaded } from "react-icons/bs" 
-import { Link } from "react-router-dom"   
+import { Link, useNavigate } from "react-router-dom"   
 import { useParams } from "react-router-dom"
 
 function BotSpecs({ botArmy, originalBots, setBotArmy}) {
+    const navigate = useNavigate();
 
     // retreive currentBotId variable from path parameters i.e in https://localhost:5173/${currentBotId},
     // for example from https://localhost:5173/105  where 105 is currentBotId
@@ -29,6 +30,9 @@ function BotSpecs({ botArmy, originalBots, setBotArmy}) {
         if (!clickedBotIsInArmy) {
            setBotArmy([...botArmy, clickedBot])
         }
+
+        // After adding bot to botArmy, go back to bots Collection page by using 'useNavigate' hook
+        navigate('/')
     }
 
     return (
