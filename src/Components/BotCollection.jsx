@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
 function BotCollection({ originalBots, displayBots }) {
+    // initialize navigate function for routing to taking to a given path or page
     const navigate = useNavigate();
 
     const handleBotClick = (botId) => {
+        // the function called takes browser to go to the path i.e https://localhost:5173/${botId}, for example https://localhost:5173/104
         navigate(`/${botId}`)
     }
 

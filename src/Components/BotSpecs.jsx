@@ -4,6 +4,8 @@ import { BsFillLightningFill, BsShieldShaded } from "react-icons/bs"
 import { Link } from "react-router-dom"   
 
 function BotSpecs() {
+
+    // this function was moved here from BotCollection compoenent instead so that when enlist button is clicked, it adds bot to army
     const handleEnlistBtnClick = (botId) => {
     
         // *find* returns the entire item (bot) if the condition passes (bot id matches)
@@ -42,6 +44,7 @@ function BotSpecs() {
                         <FaHeartbeat/> 23 <BsFillLightningFill/> 53 <BsShieldShaded /> 52
                     </div>
                     <Link to="/" className="btnGoBack d-block my-3 w-100">Go Back</Link>
+                    {/* add onClick handler to enlist button which will add bot to army when clicked */}
                     <button onClick={() => { handleEnlistBtnClick(id) }} className="btnEnlist d-block mb-4 w-100">Enlist</button>
                 </div>
             </div>

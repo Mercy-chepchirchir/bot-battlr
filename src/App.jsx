@@ -34,7 +34,8 @@ function App() {
         
       <Routes>
         <Route path="/" element={<BotCollection originalBots={originalBots} botArmy={botArmy} setBotArmy={setBotArmy} displayBots={displayBots} />} />
-        <Route path="/id" element={<BotSpecs />} />
+        {/* the :id show that anything after / is a value stored in id variable */}
+        <Route path="/:id" element={<BotSpecs />} />
       </Routes>
     </BrowserRouter>
   )
