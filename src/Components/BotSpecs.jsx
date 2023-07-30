@@ -4,7 +4,7 @@ import { BsFillLightningFill, BsShieldShaded } from "react-icons/bs"
 import { Link } from "react-router-dom"   
 import { useParams } from "react-router-dom"
 
-function BotSpecs() {
+function BotSpecs({ botArmy, originalBots, setBotArmy}) {
 
     // retreive currentBotId variable from path parameters i.e in https://localhost:5173/${currentBotId},
     // for example from https://localhost:5173/105  where 105 is currentBotId
@@ -12,6 +12,8 @@ function BotSpecs() {
 
     // this function was moved here from BotCollection compoenent instead so that when enlist button is clicked, it adds bot to army
     const handleEnlistBtnClick = (botId) => {
+        // convert botId from url path, string to an integer
+        botId = parseInt(botId)
     
         // *find* returns the entire item (bot) if the condition passes (bot id matches)
         const clickedBot = originalBots.find((bot) => {
