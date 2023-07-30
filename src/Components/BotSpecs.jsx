@@ -1,7 +1,7 @@
 function BotSpecs() {
 
     return (
-        <h2>Bot Specifications</h2>
+        <h2>Bot Specifications rendered here</h2>
     )
 }
 
