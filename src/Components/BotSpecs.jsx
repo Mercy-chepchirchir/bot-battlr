@@ -2,8 +2,13 @@ import { HiXMark } from "react-icons/hi2"
 import { FaHeartbeat } from "react-icons/fa"
 import { BsFillLightningFill, BsShieldShaded } from "react-icons/bs" 
 import { Link } from "react-router-dom"   
+import { useParams } from "react-router-dom"
 
 function BotSpecs() {
+
+    // retreive currentBotId variable from path parameters i.e in https://localhost:5173/${currentBotId},
+    // for example from https://localhost:5173/105  where 105 is currentBotId
+    const { currentBotId } = useParams();
 
     // this function was moved here from BotCollection compoenent instead so that when enlist button is clicked, it adds bot to army
     const handleEnlistBtnClick = (botId) => {
@@ -45,7 +50,7 @@ function BotSpecs() {
                     </div>
                     <Link to="/" className="btnGoBack d-block my-3 w-100">Go Back</Link>
                     {/* add onClick handler to enlist button which will add bot to army when clicked */}
-                    <button onClick={() => { handleEnlistBtnClick(id) }} className="btnEnlist d-block mb-4 w-100">Enlist</button>
+                    <button onClick={() => { handleEnlistBtnClick(currentBotId) }} className="btnEnlist d-block mb-4 w-100">Enlist</button>
                 </div>
             </div>
         </div>
