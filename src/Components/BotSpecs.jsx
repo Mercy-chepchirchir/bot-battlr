@@ -4,6 +4,23 @@ import { BsFillLightningFill, BsShieldShaded } from "react-icons/bs"
 import { Link } from "react-router-dom"   
 
 function BotSpecs() {
+    const handleEnlistBtnClick = (botId) => {
+    
+        // *find* returns the entire item (bot) if the condition passes (bot id matches)
+        const clickedBot = originalBots.find((bot) => {
+            return bot.id === botId
+        })
+
+        // *some* returns true if clicked bot is in army otherwise returns false
+        const clickedBotIsInArmy = botArmy.some((bot) => {
+            return bot.id === botId
+        })
+
+        // use ! (not operator) to see if clickedBot is not in army (return opposite)
+        if (!clickedBotIsInArmy) {
+           setBotArmy([...botArmy, clickedBot])
+        }
+    }
 
     return (
         <div className="card h-90">
@@ -25,7 +42,7 @@ function BotSpecs() {
                         <FaHeartbeat/> 23 <BsFillLightningFill/> 53 <BsShieldShaded /> 52
                     </div>
                     <Link to="/" className="btnGoBack d-block my-3 w-100">Go Back</Link>
-                    <button className="btnEnlist d-block mb-4 w-100">Enlist</button>
+                    <button onClick={() => { handleEnlistBtnClick(id) }} className="btnEnlist d-block mb-4 w-100">Enlist</button>
                 </div>
             </div>
         </div>
