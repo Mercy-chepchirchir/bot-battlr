@@ -69,6 +69,16 @@ button:focus-visible {
   background-color: #ebebeb;
 }
 
+/*  Bot Specs  */
+.right-details-part {
+  text-align: left;
+  padding-top: 2rem;
+}
+
+.right-details-part .card-body {
+  padding: 0 !important;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
