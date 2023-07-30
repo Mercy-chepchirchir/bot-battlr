@@ -1,6 +1,7 @@
 import { HiXMark } from "react-icons/hi2"
 import { FaHeartbeat } from "react-icons/fa"
-import { BsFillLightningFill, BsShieldShaded } from "react-icons/bs"    
+import { BsFillLightningFill, BsShieldShaded } from "react-icons/bs" 
+import { Link } from "react-router-dom"   
 
 function BotSpecs() {
 
@@ -23,7 +24,7 @@ function BotSpecs() {
                     <div className="card-footer">
                         <FaHeartbeat/> 23 <BsFillLightningFill/> 53 <BsShieldShaded /> 52
                     </div>
-                    <button className="btnGoBack d-block my-3 w-100">Go Back</button>
+                    <Link to="/" className="btnGoBack d-block my-3 w-100">Go Back</Link>
                     <button className="btnEnlist d-block mb-4 w-100">Enlist</button>
                 </div>
             </div>
