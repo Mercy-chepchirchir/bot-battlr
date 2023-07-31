@@ -8,15 +8,10 @@ function BotCard({ bot, originalBots, handleBotClick, setOriginalBots, setBotArm
     const navigate = useNavigate();
 
     const handleXClick = (botId) => {
-        // for bots starting from id:101 access from npoint using index 0
-        const botIndex = botId - 101
-
-        console.log(botIndex)
-
-        fetch(`https://api.npoint.io/dad7b0fb171a4b3e17c2/bots/${botIndex}`, {
+        fetch(`https://mock-json-server-mtop.onrender.com/api/bots/${botId}`, {
             method: "DELETE",
             headers: {
-                'Access-Control-Allow-Origin': '*'
+                'Access-Control-Allow-Origin': '*',
             }
         }).then(res => res.json())
         .then(() => {
