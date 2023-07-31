@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 function BotCollection({ originalBots, displayBots }) {
-    // initialize navigate function for routing to taking to a given path or page
+    // initialize navigate function for routing to take you to a given path or page
     const navigate = useNavigate();
 
     const handleBotClick = (botId) => {
