@@ -8,8 +8,13 @@ function BotCard({ bot, originalBots, handleBotClick, setOriginalBots, setBotArm
     const navigate = useNavigate();
 
     const handleXClick = (botId) => {
-        fetch(`https://api.npoint.io/dad7b0fb171a4b3e17c2/bots/${botId}`, {
-            method: "DELETE"
+        // for bots starting from id:101 access from npoint using index 0
+        const botIndex = botId - 101
+
+        console.log(botIndex)
+
+        fetch(`https://api.npoint.io/dad7b0fb171a4b3e17c2/bots/${botIndex}`, {
+            method: "DELETE",
         }).then(res => res.json())
         .then(() => {
             const filteredOriginalBots = originalBots.filter((oneBot) => {
