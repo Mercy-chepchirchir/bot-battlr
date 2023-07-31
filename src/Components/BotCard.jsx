@@ -23,6 +23,7 @@ function BotCard({ bot, originalBots, handleBotClick, setOriginalBots, setBotArm
             setBotArmy(filteredArmyBots)
             setOriginalBots(filteredOriginalBots)
 
+            // redirect to homepage having botscollection after deleting the bot
             navigate('/')
         })
     }
