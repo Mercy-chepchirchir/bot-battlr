@@ -15,6 +15,9 @@ function BotCard({ bot, originalBots, handleBotClick, setOriginalBots, setBotArm
 
         fetch(`https://api.npoint.io/dad7b0fb171a4b3e17c2/bots/${botIndex}`, {
             method: "DELETE",
+            headers: {
+                'Access-Control-Allow-Origin': '*'
+            }
         }).then(res => res.json())
         .then(() => {
             const filteredOriginalBots = originalBots.filter((oneBot) => {
