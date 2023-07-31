@@ -1,9 +1,11 @@
 import { HiXMark } from "react-icons/hi2"
 import { FaHeartbeat } from "react-icons/fa"
 import { BsFillLightningFill, BsShieldShaded } from "react-icons/bs"
+import { useNavigate } from "react-router-dom";
 
 function BotCard({ bot, originalBots, handleBotClick, setOriginalBots, setBotArmy, botArmy }) {
     const { id, name, health, damage, armor, catchphrase, avatar_url } = bot;
+    const navigate = useNavigate();
 
     const handleXClick = (botId) => {
         fetch(`http://localhost:3000/bots/${botId}`, {
@@ -20,6 +22,8 @@ function BotCard({ bot, originalBots, handleBotClick, setOriginalBots, setBotArm
 
             setBotArmy(filteredArmyBots)
             setOriginalBots(filteredOriginalBots)
+
+            navigate('/')
         })
     }
 
